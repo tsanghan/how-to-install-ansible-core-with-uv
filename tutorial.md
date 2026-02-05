@@ -61,7 +61,7 @@ ansible --version
 ```
 
 Create an ansible.cfg file
-```Wiki
+```none
 cat <<EOF | tee ansible.cfg
 [defaults]
 inventory = ./inventory
@@ -125,7 +125,7 @@ curl -sfL https://direnv.net/install.sh | bash
 ```
 
 Hook direnv into your shell by adding the following line at the end of the ~/.bashrc file
-```bash
+```none
 eval "$(direnv hook bash)"
 ```
 
@@ -135,7 +135,7 @@ source ~/.bashrc
 ```
 
 Currently direnv does not integrate with uv, we will create an extention for the automation of invoking uv utility
-```terminal
+```none
 mkdir -p /home/${USER}/.config/direnv
 cat <<'EOF' > /home/${USER}/.config/direnv/direnvrc
 layout_uv() {
@@ -178,7 +178,7 @@ Now we cd into $HOME/Projects/project2
 cd $HOME/Projects/project2
 ```
 
-You will get a message "direnv: error /home/tsanghan/Projects/project2/.envrc is blocked. Run `direnv allow` to approve its content"
+You will get a message *direnv: error /home/tsanghan/Projects/project2/.envrc is blocked. Run `direnv allow` to approve its content*
 Type the following command to allow
 ```bash
 direnv allow
@@ -193,7 +193,7 @@ Follow instrunction steps from part 1 to install
 1) ansible-core
 2) ansible-lint
 3) F5 BIG-IP Imperative Collection for Ansible
-4) do remember to create a project *ansible.cfg* file
+4) Do remember to create a project *ansible.cfg* file
 
 To deactivate the virtual environment, simply cd out of the project direcotry.
 
@@ -202,7 +202,7 @@ cd ..
 ```
 
 To have promp show your virutal environment, paste the following to the end of ~/.bashrc
-```bash
+```none
 show_virtual_env() {
   if [[ -n "$VIRTUAL_ENV_PROMPT" && -n "$DIRENV_DIR" ]]; then
     echo "($(basename $VIRTUAL_ENV_PROMPT)) "
