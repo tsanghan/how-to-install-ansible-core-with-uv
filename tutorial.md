@@ -136,8 +136,8 @@ source ~/.bashrc
 
 Currently direnv does not integrate with uv, we will create an extention for the automation of invoking uv utility
 ```none
-mkdir -p /home/${USER}/.config/direnv
-cat <<'EOF' > /home/${USER}/.config/direnv/direnvrc
+mkdir -p /home/$USER/.config/direnv
+cat <<'EOF' > /home/$USER/.config/direnv/direnvrc
 layout_uv() {
     if [[ -d ".venv" ]]; then
         VIRTUAL_ENV="$(pwd)/.venv"
@@ -213,4 +213,7 @@ PS1='$(show_virtual_env)'$PS1
 
 Source the file ~/.bashrc
 
-Cd into project2 directoory, take note of the prompt.
+*cd* into project2 directoory, take note of the prompt.
+
+For more information on *uv*, please read https://docs.astral.sh/uv/
+For more information on *direnv*, please read https://direnv.net/
