@@ -3,7 +3,9 @@
 uv and uvx will be installed in $HOME/.local/bin, we will not be using uvx in this session.
 
 ```bash
+cd $HOME
 curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
 ```
 
 Check your system python version
@@ -14,8 +16,8 @@ python --version
 
 Create a Project directory
 ```bash
-mkdir -p Projects/project1
-cd Projects/project1
+mkdir -p $HOME/Projects/project1
+cd $HOME/Projects/project1
 ```
 
 To view available and installed Python versions
@@ -114,14 +116,15 @@ Can we automate the activate/deactivate worflow?
 Yes we can with *direnv*
 
 Change directory back to $HOME
-Install *direnv*
+Install *direnv*.\
 *direnv* will be installed in $HOME/.local/bin
 
 ```bash
+cd $HOME
 curl -sfL https://direnv.net/install.sh | bash
 ```
 
-Hook direnv into your shell by adding he following line at the end of the ~/.bashrc file
+Hook direnv into your shell by adding the following line at the end of the ~/.bashrc file
 ```bash
 eval "$(direnv hook bash)"
 ```
@@ -176,7 +179,7 @@ cd $HOME/Projects/project2
 ```
 
 You will get a message "direnv: error /home/tsanghan/Projects/project2/.envrc is blocked. Run `direnv allow` to approve its content"
-we will type "direnv allow"
+Type the following command to allow
 ```bash
 direnv allow
 ```
@@ -190,6 +193,7 @@ Follow instrunction steps from part 1 to install
 1) ansible-core
 2) ansible-lint
 3) F5 BIG-IP Imperative Collection for Ansible
+4) do remember to create a project *ansible.cfg* file
 
 To deactivate the virtual environment, simply cd out of the project direcotry.
 
