@@ -134,7 +134,7 @@ To activate the above hook in your current shell
 source ~/.bashrc
 ```
 
-Currently direnv does not integrate with uv, we will create an extention for the automation of invoking uv utility
+Currently direnv does not integrate with uv, we will create an *direnv* extention for the automation of invoking uv utility
 ```none
 mkdir -p /home/$USER/.config/direnv
 cat <<'EOF' > /home/$USER/.config/direnv/direnvrc
@@ -159,7 +159,7 @@ Create a second project directory
 ```bash
 mkdir $HOME/Projects/project2
 ```
-direnv will automatically activate virtual environment when we change direcotry (cd) into the project directory
+*direnv* will automatically activate virtual environment when we change direcotry (cd) into the project directory
 Currently, we have not set up the project2 directory
 We will not set up the project2 directory
 And we want to use Python 3.14.3 for this project
@@ -193,7 +193,9 @@ Follow instrunction steps from part 1 to install
 1) ansible-core
 2) ansible-lint
 3) F5 BIG-IP Imperative Collection for Ansible
-4) Do remember to create a project *ansible.cfg* file
+
+Do remember to create a project *ansible.cfg* file **before step 3** above
+
 
 To deactivate the virtual environment, simply cd out of the project direcotry.
 
