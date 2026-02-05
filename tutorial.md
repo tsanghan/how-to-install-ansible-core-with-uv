@@ -61,7 +61,7 @@ ansible --version
 ```
 
 Create an ansible.cfg file
-```bash
+```Wiki
 cat <<EOF | tee ansible.cfg
 [defaults]
 inventory = ./inventory
@@ -135,7 +135,7 @@ source ~/.bashrc
 ```
 
 Currently direnv does not integrate with uv, we will create an extention for the automation of invoking uv utility
-```bash
+```terminal
 mkdir -p /home/${USER}/.config/direnv
 cat <<'EOF' > /home/${USER}/.config/direnv/direnvrc
 layout_uv() {
