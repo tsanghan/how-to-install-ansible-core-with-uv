@@ -60,7 +60,9 @@ Check ansible version and take note of the value for the line "config file"
 ansible --version
 ```
 
-Create an ansible.cfg file
+Create an *ansible.cfg* file\
+With reference to https://docs.ansible.com/projects/ansible/latest/reference_appendices/config.html\
+Go through each line of *ansible.cfg* file and understand their respective function.
 ```none
 cat <<EOF | tee ansible.cfg
 [defaults]
@@ -115,8 +117,7 @@ Can we automate the activate/deactivate worflow?
 
 Yes we can with *direnv*
 
-Change directory back to $HOME
-Install *direnv*.\
+Change directory back to $HOME and install *direnv*.\
 *direnv* will be installed in $HOME/.local/bin
 
 ```bash
@@ -124,12 +125,12 @@ cd $HOME
 curl -sfL https://direnv.net/install.sh | bash
 ```
 
-Hook direnv into your shell by adding the following line at the end of the ~/.bashrc file
+Hook *direnv* into your *bash* shell by adding the following line at the end of the ~/.bashrc file
 ```none
 eval "$(direnv hook bash)"
 ```
 
-To activate the above hook in your current shell
+To activate the above hook in your current instance of bash shell
 ```bash
 source ~/.bashrc
 ```
@@ -197,7 +198,7 @@ Follow instrunction steps from part 1 to install
 Do remember to create a project *ansible.cfg* file **before step 3** above
 
 
-To deactivate the virtual environment, simply cd out of the project direcotry.
+To deactivate the virtual environment, simply *cd* out of the project direcotry.
 
 ```bash
 cd ..
