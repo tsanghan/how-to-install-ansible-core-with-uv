@@ -226,7 +226,7 @@ source ~/.bashrc
 
 *cd* into project2 directoory, take note of the prompt.
 ```bash
-cd $HOME/Projects/prohect2
+cd $HOME/Projects/project2
 ```
 
 For more information on *uv*, please read https://docs.astral.sh/uv/
