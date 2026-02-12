@@ -153,6 +153,10 @@ layout_uv() {
             log_status "No virtual environment exists. Executing \`uv venv --python $1\`."
             uv python pin $1
             uv venv --python $1
+			if [[ ! -f $(pwd)/pyproject.toml ]]; then
+				log_status "No \`pyproject.toml\` file found. Executing \`uv init --bare\`."
+				uv init --bare
+			fi
         fi
         VIRTUAL_ENV="$(pwd)/.venv"
     fi
@@ -172,13 +176,7 @@ Currently, we have not set up the project2 directory
 We will not set up the project2 directory
 And we want to use Python 3.14.3 for this project
 ```bash
-uv python install 3.14.3
-pushd $HOME/Projects/project2
-uv python pin 3.14.3
-uv init --bare
-uv venv --python 3.14.3
-popd
-echo "layout uv" | tee $HOME/Projects/project2/.envrc
+echo "layout uv 3.14.3" | tee $HOME/Projects/project2/.envrc
 ```
 
 Now we *cd* into *$HOME/Projects/project2*
