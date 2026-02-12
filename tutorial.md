@@ -14,7 +14,7 @@ Check your system python version
 python --version
 ```
 
-Create a Project directory
+Create a Project directory named *project1* and *cd* into this directory.
 ```bash
 mkdir -p $HOME/Projects/project1
 cd $HOME/Projects/project1
@@ -25,32 +25,32 @@ To view available and installed Python versions
 uv python list
 ```
 
-Install a specific python version and pin project python version
+Install a specific python version and pin project python version in the current directory which is *project1* directory
 ```bash
 uv python pin 3.13.12
 ```
 
-initiate a bare project directory, since we are not doing software development
+initiate a bare project directory in *project1*, since we are not doing software development
 ```bash
 uv init --bare
 ```
 
-Create a venv in project directory
+Create a venv in *project1* directory
 ```bash
 uv venv --python 3.13.12
 ```
 
-Activate project virtual environment and take note of the change in your shell prompt
+Activate *project1* virtual environment and take note of the change in your shell prompt
 ```bash
 source .venv/bin/activate
 ```
 
-Check project python version
+Check project python version in *project1* virtual environment
 ```bash
 python --version
 ```
 
-Install ansible-core
+Install ansible-core into *project1* virtual environment
 ```bash
 uv add ansible-core
 ```
@@ -86,7 +86,7 @@ Test ansible with localhost ping
 ansible localhost -m ping
 ```
 
-Install ansible-lint
+Install ansible-lint into *project1* virtual environment
 ```bash
 uv add ansible-lint
 ```
@@ -145,8 +145,15 @@ layout_uv() {
     fi
 
     if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
-        log_status "No virtual environment exists. Executing \`python -m venv .venv\`."
-        python -m venv .venv
+        
+        if [[ "$#" -eq 0 ]]; then
+            log_status "No virtual environment exists. Executing \`python -m venv .venv\`."
+            python -m venv .venv
+        else
+            log_status "No virtual environment exists. Executing \`uv venv --python $1\`."
+            uv python pin $1
+            uv venv --python $1
+        fi
         VIRTUAL_ENV="$(pwd)/.venv"
     fi
 
@@ -174,7 +181,7 @@ popd
 echo "layout uv" | tee $HOME/Projects/project2/.envrc
 ```
 
-Now we cd into $HOME/Projects/project2
+Now we *cd* into *$HOME/Projects/project2*
 ```bash
 cd $HOME/Projects/project2
 ```
@@ -214,9 +221,15 @@ show_virtual_env() {
 PS1='$(show_virtual_env)'$PS1
 ```
 
-Source the file ~/.bashrc
+Source the file *~/.bashrc*
+```bash
+source ~/.bashrc
+```
 
 *cd* into project2 directoory, take note of the prompt.
+```bash
+cd $HOME/Projects/prohect2
+```
 
 For more information on *uv*, please read https://docs.astral.sh/uv/
 For more information on *direnv*, please read https://direnv.net/
