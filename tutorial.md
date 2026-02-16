@@ -111,10 +111,6 @@ Install Install F5OS based Collection for Ansible
 ansible-galaxy collection install f5networks.f5os
 ```
 
-```bash
-ansible-galaxy collection install f5networks.f5_modules
-```
-
 Check F5 BIG-IP Imperative Collection for Ansible version
 ```bash
 ansible-galaxy collection list
