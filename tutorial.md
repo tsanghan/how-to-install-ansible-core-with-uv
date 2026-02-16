@@ -116,7 +116,7 @@ Check F5 BIG-IP Imperative Collection for Ansible version
 ansible-galaxy collection list
 ```
 
-Exit from virtual environment and take note of the change in your shell prompt
+*deactivate* is the copmmand to exit from virtual environment and take note of the change in your shell prompt
 ```bash
 deactivate
 ```
